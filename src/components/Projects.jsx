@@ -1,6 +1,15 @@
 // src/components/Projects.jsx
+import { motion } from "framer-motion";
+
 export default function Projects() {
   const projects = [
+    {
+      title: "Système de Contrôle d'Accès par Détection de Casque IoT",
+      tech: "Python · TensorFlow/Keras · Flask · Raspberry Pi",
+      description:
+        "IoT system for helmet detection using Deep Learning and Computer Vision. Built with 3 Python modules: AI webcam inference, Raspberry Pi hardware control (motor L293D, LCD, buzzer), and a Flask/Chart.js dashboard. Communication via VSPE (COM7↔COM8) and REST API.",
+    },
+
     {
       title: "Perfometrics – Dashboard Marketing",
       tech: "Laravel · Angular · APIs",
@@ -27,35 +36,40 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 bg-[#0f172a] text-white">
-      <h2 className="text-3xl font-bold mb-12 text-center text-white">
-        Projects
-      </h2>
+    <section id="projects" className="py-20 px-6 text-white">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl font-bold mb-12 text-center"
+      >
+        My <span className="text-gradient">Projects</span>
+      </motion.h2>
 
       <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="group relative p-8 bg-[#1e293b] rounded-2xl border border-indigo-400
-                       shadow-md hover:shadow-2xl
-                       hover:-translate-y-2
-                       transition-all duration-300"
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            whileHover={{ y: -6 }}
+            className="group relative p-8 glass rounded-2xl shadow-md hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
           >
-            {/* Badge techno */}
-            <span className="inline-block mb-4 text-sm font-medium text-indigo-100 bg-indigo-500/20 px-4 py-1 rounded-full">
+            <span className="inline-block mb-4 text-sm font-medium text-cyan-200 bg-cyan-500/10 border border-cyan-400/20 px-4 py-1 rounded-full">
               {project.tech}
             </span>
 
-            {/* Titre */}
-            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-indigo-400 transition-colors">
+            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-gradient transition-colors">
               {project.title}
             </h3>
 
-            {/* Description */}
             <p className="text-gray-300 leading-relaxed">
               {project.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
