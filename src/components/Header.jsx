@@ -36,8 +36,8 @@ export default function Header() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="mt-6 text-gray-300 max-w-xl text-lg"
           >
-            Passionate about data analysis, web development, and the Internet
-            of Things — I design intelligent solutions focused on data and
+            Passionate about data analysis, web development, and the Internet of
+            Things — I design intelligent solutions focused on data and
             innovation.
           </motion.p>
 
@@ -79,7 +79,7 @@ export default function Header() {
           >
             <div className="relative w-72 h-72 rounded-full p-1 bg-gradient-to-br from-indigo-400 via-purple-400 to-cyan-400">
               <img
-                src={process.env.PUBLIC_URL + "/profile.jpeg"}
+                src={process.env.PUBLIC_URL + "/profile.png"}
                 alt="Ranim Tormane"
                 className="w-full h-full object-cover rounded-full border-4 border-[#0b1020] shadow-2xl"
               />
