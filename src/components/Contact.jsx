@@ -12,7 +12,7 @@ export default function Contact() {
     },
     {
       icon: <FiPhone size={20} />,
-      label: "Téléphone",
+      label: "Phone Number",
       value: "+216 52 610 070",
       href: "tel:+21652610070",
     },
